@@ -1,12 +1,11 @@
-import app from 'ampersand-app';
-import Router from 'ampersand-router';
-import React from 'react';
-import ReactDOM from 'react-dom';
+import Router from 'ampersand-router'
+import React from 'react'
+import ReactDOM from 'react-dom'
 
-import MatchCollection from './collections/matches';
-import Layout from './layout';
-import Header from './components/navbar';
-import Match from './components/match';
+import MatchCollection from './collections/matches'
+import Layout from './layout'
+import Header from './components/navbar'
+import Match from './components/match'
 
 export default Router.extend({
   renderPage (page, opts = {layout: true}) {
@@ -28,8 +27,8 @@ export default Router.extend({
     '': 'home'
   },
 
-  home() {
-    const matches = new MatchCollection();
+  home () {
+    const matches = new MatchCollection()
     matches.fetch()
     this.renderPage(<Match matches={matches} />)
   }

@@ -1,12 +1,12 @@
-import React from 'react';
+import React from 'react'
 
 export default React.createClass({
   displayName: 'Layout',
-  render() {
+  render () {
     return (
-      <div className="container">
+      <div className='container'>
         {this.props.children}
       </div>
     )
   }
-});
+})

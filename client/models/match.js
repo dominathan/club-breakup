@@ -1,9 +1,9 @@
-import Model from 'ampersand-model';
+import Model from 'ampersand-model'
 
 export default Model.extend({
   url: '/api/targets',
 
-  initialize() {
+  initialize () {
   },
 
   props: {
@@ -28,10 +28,10 @@ export default Model.extend({
     age: {
       deps: ['birth_date'],
       fn () {
-        const jsBirthday = new Date(this.birth_date);
-        const ageDifMs = Date.now() - jsBirthday.getTime();
-        const ageDate = new Date(ageDifMs);
-        return Math.abs(ageDate.getUTCFullYear() - 1970);
+        const jsBirthday = new Date(this.birth_date)
+        const ageDifMs = Date.now() - jsBirthday.getTime()
+        const ageDate = new Date(ageDifMs)
+        return Math.abs(ageDate.getUTCFullYear() - 1970)
       }
     },
     sex: {
@@ -42,4 +42,4 @@ export default Model.extend({
     }
   }
 
-});
+})
