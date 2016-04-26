@@ -1,4 +1,3 @@
-
 import Router from 'ampersand-router';
 import React from 'react';
 import ReactDOM from 'react-dom'
@@ -10,7 +9,7 @@ export default Router.extend({
     if (opts.layout) {
       page = (
         <div>
-          <Header />
+          <Header/>
           <Layout>
             {page}
           </Layout>
