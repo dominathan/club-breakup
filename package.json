@@ -5,7 +5,7 @@
   "private": true,
   "scripts": {
     "start": "node ./bin/www",
-    "dev": "hjs-dev-server",
+    "dev": "hjs-dev-server & nodemon ./bin/www",
     "build": "NODE_ENV=production node node_modules/.bin/webpack",
     "reseed": "dropdb tindergarten2_dev && createdb tindergarten2_dev && knex migrate:latest && node services/localTinderSetup",
     "rebuild": "dropdb tindergarten2_dev && createdb tindergarten2_dev && knex migrate:latest"

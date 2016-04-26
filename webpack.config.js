@@ -5,6 +5,14 @@ var webpackConfig = getConfig({
 	in: 'client/app.js',
   out: 'dist',
   clearBeforeBuild: true,
+  devServer: {
+    proxy: {
+      context: '/api',
+      options: {
+        target: "http://localhost:3001"
+      }
+    }
+  }
 })
 
 webpackConfig.module.loaders.push({

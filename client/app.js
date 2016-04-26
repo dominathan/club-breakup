@@ -8,8 +8,10 @@ window.app = app;
 
 app.extend({
   init() {
+
     this.router = new Router();
     this.router.history.start();
+
   }
 });
 
