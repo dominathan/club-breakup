@@ -22,8 +22,8 @@ export default React.createClass({
               <li><a href='#'>Tinder Fails</a></li>
               <li><a href='#'>How It Works</a></li>
               <li><a>Global Chat</a></li>
-              <li><a href='#'>Sign in</a></li>
-              <li><a href='#'>Sign Up</a></li>
+              <li><a href='/login'>Sign in</a></li>
+              <li><a href='/signup'>Sign Up</a></li>
               <li className='dropdown'>
                 <a href='#' className='dropdown-toggle' data-toggle='dropdown' role='button' aria-haspopup='true' aria-expanded='false'>Profile <span className='caret'></span></a>
                 <ul className='dropdown-menu'>

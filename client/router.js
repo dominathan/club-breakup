@@ -6,6 +6,8 @@ import MatchCollection from './collections/matches'
 import Layout from './layout'
 import Header from './components/navbar'
 import Match from './components/match'
+import Login from './pages/login'
+import Signup from './pages/signup'
 
 export default Router.extend({
   renderPage (page, opts = {layout: true}) {
@@ -24,12 +26,22 @@ export default Router.extend({
   },
 
   routes: {
-    '': 'home'
+    '': 'home',
+    'login': 'login',
+    'signup': 'signup'
   },
 
   home () {
     const matches = new MatchCollection()
     matches.fetch()
     this.renderPage(<Match matches={matches} />)
+  },
+
+  login () {
+    this.renderPage(<Login />)
+  },
+
+  signup () {
+    this.renderPage(<Signup />)
   }
 })

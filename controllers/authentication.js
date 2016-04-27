@@ -83,6 +83,7 @@ router.route('/signup').post(function(req, res, next) {
     });
   });
 });
+
 router.get('/getTinderInfo', ensureAuthenticated, function(req, res, next) {
   knex('fake_accounts')
   .select("*")

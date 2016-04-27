@@ -44,7 +44,7 @@ app.use('/api/user-matches', UserMatchesController);
 app.use('/api/facebook', facebookInfo);
 app.use('/api/tinder', tinderInfo);
 app.use('/api/chats', ChatController);
-app.use('/auth', authenitcation);
+app.use('/api/auth', authenitcation);
 app.use('/api',ProfileController);
 
 // catch 404 and forward to error handler
