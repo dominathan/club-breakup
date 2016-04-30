@@ -13,12 +13,7 @@ export default React.createClass({
   },
 
   handleChange(event) {
-    this.setState({
-      username: event.target.value,
-      email: event.target.value,
-      password: event.target.value,
-      confirmPassword: event.target.value
-    })
+  
   },
 
   render () {
