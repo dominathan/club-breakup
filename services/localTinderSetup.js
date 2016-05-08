@@ -31,6 +31,7 @@ var myUpdates = require('../spec/fixtures/new_updates.json');
 
           myUpdates.matches.forEach(function(match) {
              var tg = Target.getTargetInfo(match,fakeAccountId.id,user[0])
+             tg.accessible = true
              knex('targets').returning(['id','tinder_id']).insert(tg)
               .then(function(targetId) {
                  var targetId = {id: targetId[0].id, tinder_id: targetId[0].tinder_id};

@@ -5,8 +5,8 @@ export default Model.extend({
   ajaxConfig () {
     return {
       headers: {
-        'Access-Token': App.me.token,
-        'Access-User': App.me.id
+        'Authorization': App.user.token,
+        'Access-User': App.user.email
       }
     }
   }

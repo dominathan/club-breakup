@@ -76,7 +76,8 @@ router.route('/signup').post(function(req, res, next) {
           }
           res.send({
             token: createToken(payload),
-            username: newUser.username
+            username: newUser.username,
+            email: newUser.email
           });
         })
       });

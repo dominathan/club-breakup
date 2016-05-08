@@ -32,7 +32,7 @@ export default Router.extend({
   },
 
   home () {
-    const matches = new MatchCollection()
+    let matches = new MatchCollection()
     matches.fetch()
     this.renderPage(<Match matches={matches} />)
   },

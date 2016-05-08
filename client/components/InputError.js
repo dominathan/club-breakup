@@ -1,23 +1,22 @@
 import React from 'react'
 import Addons from 'react-addons'
-import _ from 'lodash'
 
-let cx = Addons.classSet;
+let cx = Addons.classSet
 
-let InputError = React.createClass({
+export default React.createClass({
 
-  getInitialState (){
+  getInitialState () {
     return {
       message: 'Input is invalid'
-    };
+    }
   },
 
-  render (){
+  render () {
     let errorClass = cx({
-      'error_container':   true,
-      'visible':           this.props.visible,
-      'invisible':         !this.props.visible
-    });
+      'error_container': true,
+      'visible': this.props.visible,
+      'invisible': !this.props.visible
+    })
 
     return (
       <div className={errorClass}>
@@ -25,7 +24,4 @@ let InputError = React.createClass({
       </div>
     )
   }
-
 })
-
-module.exports = InputError;

@@ -1,7 +1,22 @@
 import React from 'react'
+import app from 'ampersand-app'
+import ampersandMixin from 'ampersand-react-mixin';
+
 
 export default React.createClass({
   displayName: 'Navbar',
+
+  mixins: [ampersandMixin],
+
+  logout (event) {
+    event.preventDefault()
+    if (app.user && app.user.token) {
+      app.user.token = null
+    }
+    window.localStorage.clear()
+    app.router.navigate('/login')
+  },
+
   render () {
     return (
       <nav className='navbar navbar-default'>
@@ -30,7 +45,7 @@ export default React.createClass({
                   <li><a href='#'>My Profile</a></li>
                   <li><a href='#'>My Matches</a></li>
                   <li role='separator' className='divider'></li>
-                  <li><a href='#'>Logout</a></li>
+                  <li onClick={this.logout}><a href=''>Logout</a></li>
                 </ul>
               </li>
             </ul>

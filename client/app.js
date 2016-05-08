@@ -2,6 +2,7 @@ import Router from './router'
 import app from 'ampersand-app'
 
 require('bootstrap/dist/css/bootstrap.css')
+require('bootstrap/dist/js/bootstrap.js')
 require('./stylesheets/main.scss')
 
 window.app = app

@@ -1,9 +1,9 @@
-/** @jsx React.DOM */
 import React from 'react'
 import Addons from 'react-addons'
 import _ from 'lodash'
-// var InputError = require('./InputError.js')
-// var PasswordValidator = require('./PasswordValidator.js')
+
+import InputError from './inputError'
+import PasswordValidator from './PasswordValidator'
 
 const cx = Addons.classSet
 
@@ -16,8 +16,7 @@ export default React.createClass({
       valid: valid,
       empty: _.isEmpty(this.props.value),
       focus: false,
-      value: null,
-      iconsVisible: !this.props.validator,
+      value: "",
       errorMessage: this.props.emptyMessage,
       validator: this.props.validator,
       validatorVisible: false,
@@ -173,13 +172,12 @@ export default React.createClass({
   render (){
 
     let inputGroupClasses = cx({
-      'input_group':     true,
       'input_valid':     this.state.valid,
       'input_error':     !this.state.valid,
       'input_empty':     this.state.empty,
       'input_hasValue':  !this.state.empty,
       'input_focused':   this.state.focus,
-      'input_unfocused': !this.state.focus
+      'input_unfocused': !this.state.focus,
     })
 
     let validator
@@ -203,14 +201,10 @@ export default React.createClass({
     return (
       <div className={inputGroupClasses}>
 
-        <label className="input_label" htmlFor={this.props.text}>
-          <span className="label_text">{this.props.text}</span>
-        </label>
-
         <input
           {...this.props}
           placeholder={this.props.placeholder}
-          className="input"
+          className="form-control input-lg"
           id={this.props.text}
           defaultValue={this.props.defaultValue}
           value={this.state.value}
@@ -224,11 +218,6 @@ export default React.createClass({
           visible={this.state.errorVisible}
           errorMessage={this.state.errorMessage}
         />
-
-        <div className="validationIcons">
-          <i className="input_error_icon" onMouseEnter={this.mouseEnterError}> <Icon type="circle_error"/> </i>
-          <i className="input_valid_icon"> <Icon type="circle_tick"/> </i>
-        </div>
 
         {validator}
 
